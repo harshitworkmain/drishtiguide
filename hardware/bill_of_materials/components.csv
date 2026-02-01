@@ -1,0 +1,24 @@
+Component,Quantity,Description,Unit Price,Supplier,Part Number,Notes
+ESP8266 NodeMCU,2,"WiFi microcontroller with USB development board",6.50,"AliExpress/Amazon","NodeMCU ESP-12E",ESP8266 with 4MB flash
+ESP32 DevKit V1,1,"Dual-core WiFi/Bluetooth microcontroller",8.50,"AliExpress/Amazon","ESP32 DevKit",ESP32 with WiFi + Bluetooth
+HC-SR04 Ultrasonic Sensor,1,"Ultrasonic distance sensor module",2.00,"AliExpress/Amazon","HC-SR04",2cm-400cm range
+MPU6050 IMU Module,1,"6-axis accelerometer and gyroscope",1.50,"AliExpress/Amazon","GY-521 MPU6050",I2C interface
+NEO-6M GPS Module,1,"GPS receiver with antenna",12.00,"AliExpress/Amazon","NEO-6M",UART interface
+Vibration Motor,5,"Miniature pancake vibration motor",1.20,"AliExpress/Amazon","1020 type",30-100mA current
+NPN Transistor 2N2222,5,"General purpose NPN transistor",0.15,"AliExpress/Amazon","2N2222",For motor driving
+1kΩ Resistor,5,"Carbon film resistor 1/4W",0.05,"AliExpress/Amazon","1kΩ 1/4W",Motor driver base resistor
+3.7V 18650 Li-ion Battery,3,"Rechargeable lithium battery",2.50,"AliExpress/Amazon","18650 3000mAh",Main power source
+18650 Battery Holder,2,"Battery holder for 2 cells",1.00,"AliExpress/Amazon","2x18650 holder",With switch and protection
+TP4056 Charging Module,2,"Li-ion battery charging module",0.80,"AliExpress/Amazon","TP4056",USB charging protection
+Mini Buzzer,1,"5V electromagnetic buzzer",0.50,"AliExpress/Amazon","5V Buzzer",Alert notifications
+Jumper Wires,20,"Dupont jumper wires female-female",0.10,"AliExpress/Amazon","Dupont 20cm",For prototyping
+Breadboard,1,"Solderless breadboard 830 points",3.00,"AliExpress/Amazon","BB830",Initial testing
+PCB Board,1,"Prototype PCB board 5x7cm",1.50,"AliExpress/Amazon","Protoboard",For final assembly
+Switches,3,"Mini toggle switch SPST",0.30,"AliExpress/Amazon","SPST Switch",Power control
+LEDs,3,"3mm LED indicator",0.10,"AliExpress/Amazon","3mm LED",Status indicators
+330Ω Resistors,3,"Carbon film resistor 1/4W",0.05,"AliExpress/Amazon","330Ω 1/4W",LED current limiting
+USB Cable,1,"Micro USB cable 1m",1.50,"Local Store","USB-A to Micro-B",Programming and charging
+Power Bank,1,"Portable power bank 10000mAh",15.00,"Local Store","Power Bank",Extended operation
+3D Printed Case,1,"Custom 3D printed enclosure",8.00,"Local 3D Print","Custom Design",Protect electronics
+Velcro Straps,2,"Adjustable velcro straps",2.00,"Craft Store","Velcro 2m",Wearable mounting
+Total Cost,0,"Complete system cost",0,"","",

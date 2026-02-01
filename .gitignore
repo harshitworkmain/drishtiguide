@@ -1,0 +1,58 @@
+# License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+# Arduino/ESP Binary Files
+*.bin
+*.elf
+*.map
+
+# Development Environment
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# PlatformIO
+.pio/
+.vscode/.pio
+
+# Arduino IDE
+*.tmp
+*.prebuild
+*.build
+
+# Logs
+*.log
+logs/
+
+# OS Specific
+.DS_Store
+Thumbs.db
+
+# Temporary Files
+*.tmp
+*.temp
+
+# Hardware Specific
+*.bak
+*.orig
+
+# Documentation Build
+docs/_build/
+docs/.doxygen/
+
+# Test Results
+test-results/
+.coverage
+.pytest_cache/
+
+# Configuration Files with Sensitive Data
+**/config.h.local
+**/secrets.h
+**/wifi_credentials.h
+
+# Flash Tools
+*.part
+*.spiffs.bin
+*.ota.bin

@@ -1,0 +1,20 @@
+# Arduino Development Environment
+ESP8266=
+ESP32=
+
+# Required Libraries
+TinyGPSPlus@^1.0.2
+MPU6050@^0.5.3
+WiFi@^2.0.0
+WebServer@^2.0.0
+
+# Development Tools
+arduino-cli@^0.31.0
+platformio@^6.1.0
+
+# Testing Framework
+pytest@^7.0.0
+serial-tools@^0.1.0
+
+# Documentation
+doxygen@^1.9.0
