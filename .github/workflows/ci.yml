@@ -28,8 +28,6 @@ jobs:
       run: |
         arduino-cli lib install "TinyGPSPlus"
         arduino-cli lib install "MPU6050"
-        arduino-cli lib install "WiFi"
-        arduino-cli lib install "WebServer"
     
     - name: Lint code
       run: |
@@ -97,8 +95,6 @@ jobs:
       run: |
         arduino-cli lib install "TinyGPSPlus"
         arduino-cli lib install "MPU6050"
-        arduino-cli lib install "WiFi"
-        arduino-cli lib install "WebServer"
     
     - name: Compile sketch
       run: |
