@@ -98,15 +98,20 @@ jobs:
     
     - name: Compile sketch
       run: |
-        arduino-cli compile --fqbn ${{ matrix.board }} ${{ matrix.sketch }}
+        arduino-cli compile --fqbn ${{ matrix.board }} --output-dir ${{ matrix.sketch }}build ${{ matrix.sketch }}
     
+    - name: Set safe board name
+      run: |
+        BOARD_SAFE="${{ matrix.board }}"
+        echo "BOARD_SAFE=${BOARD_SAFE//:/_}" >> $GITHUB_ENV
+
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: firmware-${{ matrix.board }}-${{ github.sha }}
+        name: firmware-${{ env.BOARD_SAFE }}-${{ github.sha }}
         path: |
-          ${{ matrix.sketch }}/build/**/*.bin
-          ${{ matrix.sketch }}/build/**/*.hex
+          ${{ matrix.sketch }}build/**/*.bin
+          ${{ matrix.sketch }}build/**/*.hex
 
   documentation:
     runs-on: ubuntu-latest
