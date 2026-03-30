@@ -1,0 +1,10 @@
+site_name: DrishtiGuide
+theme:
+  name: material
+docs_dir: docs
+nav:
+  - Home: index.md
+  - System Architecture: system_architecture.md
+  - API Documentation: api_documentation.md
+  - Installation Guide: installation_guide.md
+  - Troubleshooting: troubleshooting.md
