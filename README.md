@@ -6,7 +6,35 @@
 [![Build Status](https://github.com/harshitworkmain/drishtiguide/workflows/CI/badge.svg)](https://github.com/harshitworkmain/drishtiguide/actions)
 [![Last Commit](https://img.shields.io/github/last-commit/harshitworkmain/drishtiguide.svg)](https://github.com/harshitworkmain/drishtiguide/commits/main)
 
-An innovative IoT-based assistive device designed to enhance navigation and safety for visually impaired individuals through real-time obstacle detection, haptic feedback, and comprehensive health monitoring.
+Integrated IoT assistive ecosystem for real-time obstacle evasion & safety monitoring. Combines HC-SR04, MPU6050, NEO-6M & ESP-NOW with ESP32/ESP8266/RPi4 orchestrator. Designed as a synchronized smart-cane & haptic wearable module.
+
+## 🌟 Tech Stack
+
+### Hardware Ecosystem
+<p align="center">
+  <img src="assets/images/techstack/hardware-stack/esp32.png" height="80" alt="ESP32" />
+  <img src="assets/images/techstack/hardware-stack/hc-sr04-ultrasonic-sensor.png" height="80" alt="HC-SR04" />
+  <img src="assets/images/techstack/hardware-stack/imu-mpu6050.png" height="80" alt="MPU6050" />
+  <img src="assets/images/techstack/hardware-stack/neo6m-gps-module.png" height="80" alt="NEO-6M GPS" />
+  <img src="assets/images/techstack/hardware-stack/r-pi.png" height="80" alt="Raspberry Pi" />
+  <img src="assets/images/techstack/hardware-stack/logitech-720p-webcam.png" height="80" alt="Logitech Webcam" />
+</p>
+
+### Software & Frameworks
+<p align="center">
+  <img src="assets/images/techstack/software-stack/c.png" height="60" alt="C" />
+  <img src="assets/images/techstack/software-stack/c++.png" height="60" alt="C++" />
+  <img src="assets/images/techstack/software-stack/arduino.png" height="60" alt="Arduino" />
+  <img src="assets/images/techstack/software-stack/python.png" height="60" alt="Python" />
+  <img src="assets/images/techstack/software-stack/open-cv.png" height="60" alt="OpenCV" />
+  <img src="assets/images/techstack/software-stack/ultralytics-yolov8.png" height="60" alt="YOLOv8" />
+  <img src="assets/images/techstack/software-stack/react.png" height="60" alt="React" />
+  <img src="assets/images/techstack/software-stack/javascript.png" height="60" alt="JavaScript" />
+  <img src="assets/images/techstack/software-stack/html.png" height="60" alt="HTML" />
+  <img src="assets/images/techstack/software-stack/css.png" height="60" alt="CSS" />
+  <img src="assets/images/techstack/software-stack/linux.png" height="60" alt="Linux" />
+  <img src="assets/images/techstack/software-stack/r-pi-os.png" height="60" alt="Raspberry Pi OS" />
+</p>
 
 ## 🎯 Features
 
@@ -16,6 +44,7 @@ An innovative IoT-based assistive device designed to enhance navigation and safe
 - **Fall Detection System**: Advanced algorithm using MPU6050 accelerometer/gyroscope
 - **GPS Location Tracking**: Real-time positioning with web-based monitoring
 - **Emergency Alerts**: Buzzer notifications for fall detection and inactivity
+- **AI Scene Perception**: YOLOv8-driven object detection using a logitech webcam feed via RPi4.
 
 ### 🔧 Technical Highlights
 - **Wireless Communication**: Low-latency ESP-NOW protocol for sensor-to-actor communication
@@ -26,29 +55,22 @@ An innovative IoT-based assistive device designed to enhance navigation and safe
 
 ## 🏗️ System Architecture
 
-```
-┌─────────────────┐    ESP-NOW    ┌─────────────────┐
-│   Transmitter   │ ◄─────────────► │    Receiver     │
-│  (Ultrasonic)   │               │  (Haptic Motors) │
-│   ESP8266       │               │     ESP8266     │
-└─────────────────┘               └─────────────────┘
-                                          │
-                                          │
-                                          ▼
-┌─────────────────────────────────────────────────────┐
-│           Main Controller (ESP32)                  │
-│  ┌─────────────┐ ┌─────────────┐ ┌───────────────┐ │
-│  │   MPU6050   │ │    GPS      │ │   WiFi AP     │ │
-│  │Fall Detection│ │ Location    │ │  Web Server   │ │
-│  └─────────────┘ └─────────────┘ └───────────────┘ │
-│               │    Buzzer Alerts                     │
-└─────────────────────────────────────────────────────┘
-```
+![System Architecture](assets/images/architecture.png)
+
+*(Note on the Architecture Map: While the visual diagram outlines the core ESP routing, the total ecosystem operates via a synchronized multi-tier node structure:)*
+* **ESP8266 Smart-Cane Node (Transmitter):** Scans the environment using HC-SR04 ultrasonic sensors to gather obstacle proximity data.
+* **ESP8266 Wearable Hub (Receiver):** Located in the jacket/wristband, providing 3D spatial haptic feedback via an array of vibration motors.
+* **ESP32 Edge Orchestrator (Main Controller):** Hosts the local web server dashboard, performs heavy fall detection (MPU6050) & geo-location tagging (GPS NEO-6M), acting as the central nexus triggering buzzer alerts.
+* **Raspberry Pi 4 Vision Gateway:** Anchors the advanced visual pipeline, running OpenCV and Ultralytics YOLOv8 inference models on the Logitech webcam feed to provide powerful real-time object detection and augmented scene reality.
+
+### Logic & Flow
+![Flow Diagram](assets/images/flow-diagram.png)
 
 ## 📁 Project Structure
 
 ```
 drishtiguide/
+├── 📁 assets/                  # Media assets, testing results, diagrams
 ├── 📁 src/                     # Source code
 │   ├── 📁 esp8266-nodes/       # ESP8266 sensor nodes
 │   ├── 📁 esp32-main-controller/ # Main ESP32 controller
@@ -65,6 +87,7 @@ drishtiguide/
 ### Prerequisites
 - Arduino IDE 1.8.19+ or PlatformIO
 - ESP8266 (2x) and ESP32 development boards
+- Raspberry Pi 4 (for YOLO AI vision)
 - Required sensors and components (see [Hardware Specifications](hardware/bill_of_materials/))
 
 ### Installation
@@ -115,12 +138,26 @@ arduino-cli upload --fqbn esp32:esp32:devkitv1 --port /dev/ttyUSB2 src/esp32-mai
 | GPS Accuracy | ±3 meters |
 
 ### Hardware Components
-- **MCUs**: ESP8266 (NodeMCU) ×2, ESP32 (DevKit V1)
-- **Sensors**: HC-SR04 Ultrasonic, MPU6050 IMU, NEO-6M GPS
+- **MCUs**: Raspberry Pi 4, ESP32 (DevKit V1), ESP8266 (NodeMCU) ×2
+- **Sensors**: HC-SR04 Ultrasonic, MPU6050 IMU, NEO-6M GPS, Logitech 720p Webcam
 - **Actuators**: 5× Vibration Motors, Buzzer
 - **Communication**: ESP-NOW, WiFi 802.11 b/g/n
 
-## 🧪 Testing
+## 🔬 AI Vision Testing & Validation
+
+Powered by **Ultralytics YOLOv8** and **OpenCV**, the object perception system robustly identifies real-world objects in live time, providing critical spatial understanding to the user via edge-compute on the Raspberry Pi. Here are the AI field testing results:
+
+<p align="center">
+  <img src="assets/images/testing/yolov8-testing-result-1.png" width="30%" />
+  <img src="assets/images/testing/yolov8-testing-result-2.png" width="30%" />
+  <img src="assets/images/testing/yolov8-testing-result-3.png" width="30%" />
+  <img src="assets/images/testing/yolov8-testing-result-4.png" width="30%" />
+  <img src="assets/images/testing/yolov8-testing-result-5.png" width="30%" />
+  <img src="assets/images/testing/yolov8-testing-result-6.png" width="30%" />
+  <img src="assets/images/testing/yolov8-testing-result-7.png" width="30%" />
+</p>
+
+## 🧪 System Testing
 
 ### Unit Tests
 ```bash
@@ -156,6 +193,13 @@ python -m pytest test_espnow_communication.py -v
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+## 👥 About the Team
+
+<p align="center">
+  <img src="assets/images/team-photo-with-project.png" width="45%" alt="Team Photo with Project" />
+  <img src="assets/images/team-photo-receiving-first-prize.png" width="45%" alt="Team Photo Receiving First Prize" />
+</p>
 
 ## 📜 License
 
