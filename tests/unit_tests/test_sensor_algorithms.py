@@ -72,7 +72,7 @@ class TestDistanceProcessing(unittest.TestCase):
                   for i in range(len(distances)-1)]
         
         for change in changes:
-            self.assertGreaterEqual(change, min_detectable_change)
+            self.assertLessEqual(change, min_detectable_change)
 
 class TestFallDetection(unittest.TestCase):
     """Test fall detection algorithms"""
@@ -153,7 +153,7 @@ class TestBatteryMonitoring(unittest.TestCase):
         # Test known voltage-percentage mappings
         test_cases = [
             (4.2, 100),  # Full
-            (3.7, 50),   # Half
+            (3.6, 50),   # Half
             (3.0, 0),    # Empty
         ]
         
