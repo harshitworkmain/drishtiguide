@@ -33,9 +33,9 @@ jobs:
       run: |
         find src -name "*.ino" -o -name "*.h" -o -name "*.cpp" | xargs -I {} echo "Checking {}"
         # Basic syntax checking
-        arduino-cli compile --fqbn esp8266:esp8266:nodemcuv2 --dry-run src/esp8266-nodes/transmitter/
-        arduino-cli compile --fqbn esp8266:esp8266:nodemcuv2 --dry-run src/esp8266-nodes/receiver/
-        arduino-cli compile --fqbn esp32:esp32:devkitv1 --dry-run src/esp32-main-controller/
+        arduino-cli compile --fqbn esp8266:esp8266:nodemcuv2 src/esp8266-nodes/transmitter/
+        arduino-cli compile --fqbn esp8266:esp8266:nodemcuv2 src/esp8266-nodes/receiver/
+        arduino-cli compile --fqbn esp32:esp32:devkitv1 src/esp32-main-controller/
 
   test:
     runs-on: ubuntu-latest
