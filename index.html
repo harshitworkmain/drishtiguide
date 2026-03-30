@@ -1,0 +1,1400 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="system_architecture/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>DrishtiGuide</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#drishtiguide-smart-assistive-system-for-the-visually-impaired" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="DrishtiGuide" class="md-header__button md-logo" aria-label="DrishtiGuide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DrishtiGuide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="DrishtiGuide" class="md-nav__button md-logo" aria-label="DrishtiGuide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DrishtiGuide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tech-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌟 Tech Stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌟 Tech Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware Ecosystem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software &amp; Frameworks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌟 Core Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Technical Highlights
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ System Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ System Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logic-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic &amp; Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Project Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Quick Start
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Technical Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Technical Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-vision-testing-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 AI Vision Testing &amp; Validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧪 System Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 System Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Development
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Style
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#about-the-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👥 About the Team
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📜 License
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🤝 Acknowledgments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👨‍💻 Author
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📞 Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api_documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installation_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tech-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌟 Tech Stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌟 Tech Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-ecosystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware Ecosystem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software &amp; Frameworks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌟 Core Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Technical Highlights
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ System Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ System Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logic-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic &amp; Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Project Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Quick Start
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Technical Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Technical Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-vision-testing-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 AI Vision Testing &amp; Validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧪 System Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 System Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Development
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Style
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#about-the-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👥 About the Team
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📜 License
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🤝 Acknowledgments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#author" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👨‍💻 Author
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📞 Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="drishtiguide-smart-assistive-system-for-the-visually-impaired">👁️ DrishtiGuide - Smart Assistive System for the Visually Impaired</h1>
+<p><a href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
+<a href="https://www.espressif.com/en/products/socs"><img alt="Platform: ESP" src="https://img.shields.io/badge/Platform-ESP8266%2F%2B%20%7C%20ESP32-blue.svg" /></a>
+<a href="https://www.arduino.cc/"><img alt="Language: C++" src="https://img.shields.io/badge/Language-C++-blue.svg" /></a>
+<a href="https://github.com/harshitworkmain/drishtiguide/actions"><img alt="Build Status" src="https://github.com/harshitworkmain/drishtiguide/workflows/CI/badge.svg" /></a>
+<a href="https://github.com/harshitworkmain/drishtiguide/commits/main"><img alt="Last Commit" src="https://img.shields.io/github/last-commit/harshitworkmain/drishtiguide.svg" /></a></p>
+<p>Integrated IoT assistive ecosystem for real-time obstacle evasion &amp; safety monitoring. Combines HC-SR04, MPU6050, NEO-6M &amp; ESP-NOW with ESP32/ESP8266/RPi4 orchestrator. Designed as a synchronized smart-cane &amp; haptic wearable module.</p>
+<h2 id="tech-stack">🌟 Tech Stack</h2>
+<h3 id="hardware-ecosystem">Hardware Ecosystem</h3>
+<p align="center">
+  <img src="assets/images/techstack/hardware-stack/esp32.png" height="80" alt="ESP32" />
+  <img src="assets/images/techstack/hardware-stack/hc-sr04-ultrasonic-sensor.png" height="80" alt="HC-SR04" />
+  <img src="assets/images/techstack/hardware-stack/imu-mpu6050.png" height="80" alt="MPU6050" />
+  <img src="assets/images/techstack/hardware-stack/neo6m-gps-module.png" height="80" alt="NEO-6M GPS" />
+  <img src="assets/images/techstack/hardware-stack/r-pi.png" height="80" alt="Raspberry Pi" />
+  <img src="assets/images/techstack/hardware-stack/logitech-720p-webcam.png" height="80" alt="Logitech Webcam" />
+</p>
+
+<h3 id="software-frameworks">Software &amp; Frameworks</h3>
+<p align="center">
+  <img src="assets/images/techstack/software-stack/c.png" height="60" alt="C" />
+  <img src="assets/images/techstack/software-stack/c++.png" height="60" alt="C++" />
+  <img src="assets/images/techstack/software-stack/arduino.png" height="60" alt="Arduino" />
+  <img src="assets/images/techstack/software-stack/python.png" height="60" alt="Python" />
+  <img src="assets/images/techstack/software-stack/open-cv.png" height="60" alt="OpenCV" />
+  <img src="assets/images/techstack/software-stack/ultralytics-yolov8.png" height="60" alt="YOLOv8" />
+  <img src="assets/images/techstack/software-stack/react.png" height="60" alt="React" />
+  <img src="assets/images/techstack/software-stack/javascript.png" height="60" alt="JavaScript" />
+  <img src="assets/images/techstack/software-stack/html.png" height="60" alt="HTML" />
+  <img src="assets/images/techstack/software-stack/css.png" height="60" alt="CSS" />
+  <img src="assets/images/techstack/software-stack/linux.png" height="60" alt="Linux" />
+  <img src="assets/images/techstack/software-stack/r-pi-os.png" height="60" alt="Raspberry Pi OS" />
+</p>
+
+<h2 id="features">🎯 Features</h2>
+<h3 id="core-capabilities">🌟 Core Capabilities</h3>
+<ul>
+<li><strong>Real-time Obstacle Detection</strong>: Ultrasonic sensors detect obstacles up to 4 meters</li>
+<li><strong>Intelligent Haptic Feedback</strong>: 5-level vibration motor system for intuitive distance indication</li>
+<li><strong>Fall Detection System</strong>: Advanced algorithm using MPU6050 accelerometer/gyroscope</li>
+<li><strong>GPS Location Tracking</strong>: Real-time positioning with web-based monitoring</li>
+<li><strong>Emergency Alerts</strong>: Buzzer notifications for fall detection and inactivity</li>
+<li><strong>AI Scene Perception</strong>: YOLOv8-driven object detection using a logitech webcam feed via RPi4.</li>
+</ul>
+<h3 id="technical-highlights">🔧 Technical Highlights</h3>
+<ul>
+<li><strong>Wireless Communication</strong>: Low-latency ESP-NOW protocol for sensor-to-actor communication</li>
+<li><strong>Multi-node Architecture</strong>: Distributed ESP8266 nodes for scalable design</li>
+<li><strong>Edge Computing</strong>: Real-time sensor processing and decision making</li>
+<li><strong>Web Interface</strong>: RESTful API for remote monitoring and configuration</li>
+<li><strong>Power Optimization</strong>: Efficient sleep modes and battery management</li>
+</ul>
+<h2 id="system-architecture">🏗️ System Architecture</h2>
+<p><img alt="System Architecture" src="assets/images/architecture.png" /></p>
+<p><em>(Note on the Architecture Map: While the visual diagram outlines the core ESP routing, the total ecosystem operates via a synchronized multi-tier node structure:)</em>
+* <strong>ESP8266 Smart-Cane Node (Transmitter):</strong> Scans the environment using HC-SR04 ultrasonic sensors to gather obstacle proximity data.
+* <strong>ESP8266 Wearable Hub (Receiver):</strong> Located in the jacket/wristband, providing 3D spatial haptic feedback via an array of vibration motors.
+* <strong>ESP32 Edge Orchestrator (Main Controller):</strong> Hosts the local web server dashboard, performs heavy fall detection (MPU6050) &amp; geo-location tagging (GPS NEO-6M), acting as the central nexus triggering buzzer alerts.
+* <strong>Raspberry Pi 4 Vision Gateway:</strong> Anchors the advanced visual pipeline, running OpenCV and Ultralytics YOLOv8 inference models on the Logitech webcam feed to provide powerful real-time object detection and augmented scene reality.</p>
+<h3 id="logic-flow">Logic &amp; Flow</h3>
+<p><img alt="Flow Diagram" src="assets/images/flow-diagram.png" /></p>
+<h2 id="project-structure">📁 Project Structure</h2>
+<pre><code>drishtiguide/
+├── 📁 assets/                  # Media assets, testing results, diagrams
+├── 📁 src/                     # Source code
+│   ├── 📁 esp8266-nodes/       # ESP8266 sensor nodes
+│   ├── 📁 esp32-main-controller/ # Main ESP32 controller
+│   └── 📁 web-interface/       # Web UI for monitoring
+├── 📁 hardware/                # Hardware designs &amp; specs
+├── 📁 docs/                   # Documentation
+├── 📁 tests/                  # Test suites
+├── 📁 tools/                  # Development utilities
+└── 📁 deployment/            # Production setup
+</code></pre>
+<h2 id="quick-start">🚀 Quick Start</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Arduino IDE 1.8.19+ or PlatformIO</li>
+<li>ESP8266 (2x) and ESP32 development boards</li>
+<li>Raspberry Pi 4 (for YOLO AI vision)</li>
+<li>Required sensors and components (see <a href="hardware/bill_of_materials/">Hardware Specifications</a>)</li>
+</ul>
+<h3 id="installation">Installation</h3>
+<ol>
+<li><strong>Clone the repository</strong></li>
+</ol>
+<pre><code class="language-bash">git clone https://github.com/harshitworkmain/drishtiguide.git
+cd drishtiguide
+</code></pre>
+<ol>
+<li><strong>Install Arduino dependencies</strong></li>
+<li>ESP8266 Board Manager (2.7.4+)</li>
+<li>ESP32 Board Manager (1.0.6+)</li>
+<li>
+<p>Required libraries (see requirements.txt)</p>
+</li>
+<li>
+<p><strong>Configure hardware</strong></p>
+</li>
+<li>Update MAC addresses in <code>src/esp8266-nodes/transmitter/config.h</code></li>
+<li>
+<p>Set WiFi credentials in <code>src/esp32-main-controller/config.h</code></p>
+</li>
+<li>
+<p><strong>Flash firmware</strong></p>
+</li>
+</ol>
+<pre><code class="language-bash"># Flash transmitter node
+arduino-cli compile --fqbn esp8266:esp8266:nodemcuv2 src/esp8266-nodes/transmitter/
+arduino-cli upload --fqbn esp8266:esp8266:nodemcuv2 --port /dev/ttyUSB0 src/esp8266-nodes/transmitter/
+
+# Flash receiver node
+arduino-cli compile --fqbn esp8266:esp8266:nodemcuv2 src/esp8266-nodes/receiver/
+arduino-cli upload --fqbn esp8266:esp8266:nodemcuv2 --port /dev/ttyUSB1 src/esp8266-nodes/receiver/
+
+# Flash main controller
+arduino-cli compile --fqbn esp32:esp32:devkitv1 src/esp32-main-controller/
+arduino-cli upload --fqbn esp32:esp32:devkitv1 --port /dev/ttyUSB2 src/esp32-main-controller/
+</code></pre>
+<ol>
+<li><strong>Monitor system</strong></li>
+<li>Connect to "BlindStick_AP" WiFi hotspot</li>
+<li>Access monitoring interface at <code>http://192.168.4.1/gps</code></li>
+</ol>
+<h2 id="technical-specifications">📊 Technical Specifications</h2>
+<h3 id="performance-metrics">Performance Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Detection Range</td>
+<td>2cm - 400cm</td>
+</tr>
+<tr>
+<td>Response Time</td>
+<td>&lt;100ms</td>
+</tr>
+<tr>
+<td>Battery Life</td>
+<td>48+ hours</td>
+</tr>
+<tr>
+<td>Wireless Range</td>
+<td>50m+ (ESP-NOW)</td>
+</tr>
+<tr>
+<td>GPS Accuracy</td>
+<td>±3 meters</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hardware-components">Hardware Components</h3>
+<ul>
+<li><strong>MCUs</strong>: Raspberry Pi 4, ESP32 (DevKit V1), ESP8266 (NodeMCU) ×2</li>
+<li><strong>Sensors</strong>: HC-SR04 Ultrasonic, MPU6050 IMU, NEO-6M GPS, Logitech 720p Webcam</li>
+<li><strong>Actuators</strong>: 5× Vibration Motors, Buzzer</li>
+<li><strong>Communication</strong>: ESP-NOW, WiFi 802.11 b/g/n</li>
+</ul>
+<h2 id="ai-vision-testing-validation">🔬 AI Vision Testing &amp; Validation</h2>
+<p>Powered by <strong>Ultralytics YOLOv8</strong> and <strong>OpenCV</strong>, the object perception system robustly identifies real-world objects in live time, providing critical spatial understanding to the user via edge-compute on the Raspberry Pi. Here are the AI field testing results:</p>
+<p align="center">
+  <img src="assets/images/testing/yolov8-testing-result-1.png" width="30%" />
+  <img src="assets/images/testing/yolov8-testing-result-2.png" width="30%" />
+  <img src="assets/images/testing/yolov8-testing-result-3.png" width="30%" />
+  <img src="assets/images/testing/yolov8-testing-result-4.png" width="30%" />
+  <img src="assets/images/testing/yolov8-testing-result-5.png" width="30%" />
+  <img src="assets/images/testing/yolov8-testing-result-6.png" width="30%" />
+  <img src="assets/images/testing/yolov8-testing-result-7.png" width="30%" />
+</p>
+
+<h2 id="system-testing">🧪 System Testing</h2>
+<h3 id="unit-tests">Unit Tests</h3>
+<pre><code class="language-bash">cd tests/unit_tests
+python -m pytest test_sensor_algorithms.py -v
+</code></pre>
+<h3 id="integration-tests">Integration Tests</h3>
+<pre><code class="language-bash">cd tests/integration_tests
+python -m pytest test_espnow_communication.py -v
+</code></pre>
+<h2 id="documentation">📖 Documentation</h2>
+<ul>
+<li><a href="docs/system_architecture.md">System Architecture</a></li>
+<li><a href="docs/api_documentation.md">API Documentation</a></li>
+<li><a href="hardware/bill_of_materials/components.csv">Hardware Specifications</a></li>
+<li><a href="docs/installation_guide.md">Installation Guide</a></li>
+<li><a href="docs/troubleshooting.md">Troubleshooting</a></li>
+</ul>
+<h2 id="development">🛠️ Development</h2>
+<h3 id="code-style">Code Style</h3>
+<ul>
+<li>Follow Arduino C++ conventions</li>
+<li>Use meaningful variable names</li>
+<li>Add comprehensive comments</li>
+<li>Modular function design</li>
+</ul>
+<h3 id="contributing">Contributing</h3>
+<ol>
+<li>Fork the repository</li>
+<li>Create a feature branch (<code>git checkout -b feature/amazing-feature</code>)</li>
+<li>Commit your changes (<code>git commit -m 'Add amazing feature'</code>)</li>
+<li>Push to the branch (<code>git push origin feature/amazing-feature</code>)</li>
+<li>Open a Pull Request</li>
+</ol>
+<h2 id="about-the-team">👥 About the Team</h2>
+<p align="center">
+  <img src="assets/images/team-photo-with-project.png" width="45%" alt="Team Photo with Project" />
+  <img src="assets/images/team-photo-receiving-first-prize.png" width="45%" alt="Team Photo Receiving First Prize" />
+</p>
+
+<h2 id="license">📜 License</h2>
+<p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
+<h2 id="acknowledgments">🤝 Acknowledgments</h2>
+<ul>
+<li><strong>ESP-NOW Protocol</strong> - Espressif Systems for reliable wireless communication</li>
+<li><strong>TinyGPS++ Library</strong> - Mikal Hart for GPS processing</li>
+<li><strong>MPU6050 Library</strong> - Electronic Cats for IMU integration</li>
+<li><strong>Assistive Technology Community</strong> - For inspiration and feedback</li>
+</ul>
+<h2 id="author">👨‍💻 Author</h2>
+<p><strong>Harshit Singh</strong> - <em>Embedded Systems Developer</em> - <a href="https://github.com/harshitworkmain">GitHub Profile</a></p>
+<hr />
+<p>⚡ <strong>Built with passion for accessible technology and IoT innovation</strong></p>
+<h2 id="support">📞 Support</h2>
+<p>For support, please open an issue on <a href="https://github.com/harshitworkmain/drishtiguide/issues">GitHub Issues</a> or contact <a href="mailto:harshit.workmain@gmail.com">harshit.workmain@gmail.com</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1722 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../installation_guide/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Troubleshooting - DrishtiGuide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#troubleshooting-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DrishtiGuide" class="md-header__button md-logo" aria-label="DrishtiGuide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DrishtiGuide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Troubleshooting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DrishtiGuide" class="md-nav__button md-logo" aria-label="DrishtiGuide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DrishtiGuide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Hardware Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Hardware Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ultrasonic-sensor-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ultrasonic Sensor Problems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ultrasonic Sensor Problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-no-distance-readings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: No Distance Readings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-inconsistent-readings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Inconsistent Readings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haptic-motor-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Haptic Motor Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Haptic Motor Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-motors-not-vibrating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Motors Not Vibrating
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-motors-too-weak" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Motors Too Weak
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esp-now-communication-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESP-NOW Communication Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ESP-NOW Communication Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-packets-not-reaching-receiver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Packets Not Reaching Receiver
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💻 Software Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💻 Software Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compilation-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compilation Errors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compilation Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-esp8266-compilation-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: ESP8266 Compilation Failures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-esp32-compilation-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: ESP32 Compilation Failures
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Runtime Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-watchdog-timer-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Watchdog Timer Reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-memory-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Memory Overflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-interface-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Web Interface Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌐 Web Interface Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connection-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection Problems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connection Problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-wifi-hotspot-not-visible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: WiFi Hotspot Not Visible
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-web-page-not-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Web Page Not Loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-response-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Response Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Response Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-json-data-not-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: JSON Data Not Updating
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-management-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔋 Power Management Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔋 Power Management Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#battery-life-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Battery Life Problems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Battery Life Problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-short-battery-life" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Short Battery Life
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-and-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧪 Testing and Debugging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Testing and Debugging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debug-mode-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug Mode Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signal-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signal Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-additional-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📞 Getting Additional Help
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📞 Getting Additional Help">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-all-else-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When All Else Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contact-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contact Information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-include-in-support-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to Include in Support Requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Hardware Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Hardware Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ultrasonic-sensor-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ultrasonic Sensor Problems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ultrasonic Sensor Problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-no-distance-readings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: No Distance Readings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-inconsistent-readings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Inconsistent Readings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#haptic-motor-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Haptic Motor Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Haptic Motor Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-motors-not-vibrating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Motors Not Vibrating
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-motors-too-weak" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Motors Too Weak
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esp-now-communication-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESP-NOW Communication Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ESP-NOW Communication Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-packets-not-reaching-receiver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Packets Not Reaching Receiver
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💻 Software Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💻 Software Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compilation-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compilation Errors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compilation Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-esp8266-compilation-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: ESP8266 Compilation Failures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-esp32-compilation-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: ESP32 Compilation Failures
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Runtime Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-watchdog-timer-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Watchdog Timer Reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-memory-overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Memory Overflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-interface-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Web Interface Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌐 Web Interface Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connection-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection Problems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connection Problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-wifi-hotspot-not-visible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: WiFi Hotspot Not Visible
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-web-page-not-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Web Page Not Loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-response-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Response Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Response Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-json-data-not-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: JSON Data Not Updating
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-management-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔋 Power Management Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔋 Power Management Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#battery-life-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Battery Life Problems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Battery Life Problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-short-battery-life" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: Short Battery Life
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-and-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧪 Testing and Debugging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Testing and Debugging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debug-mode-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug Mode Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signal-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signal Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-additional-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📞 Getting Additional Help
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📞 Getting Additional Help">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-all-else-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When All Else Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contact-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contact Information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-include-in-support-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to Include in Support Requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="troubleshooting-guide">Troubleshooting Guide</h1>
+<p>This guide provides solutions to common issues encountered while setting up and using the DrishtiGuide assistive system.</p>
+<h2 id="hardware-issues">🔧 Hardware Issues</h2>
+<h3 id="ultrasonic-sensor-problems">Ultrasonic Sensor Problems</h3>
+<h4 id="issue-no-distance-readings">Issue: No Distance Readings</h4>
+<p><strong>Symptoms:</strong>
+- Serial monitor shows "Distance: 0cm" or inconsistent values
+- No response when placing objects in front of sensor</p>
+<p><strong>Possible Causes:</strong>
+1. <strong>Power Supply Issues</strong>
+   - Insufficient voltage to HC-SR04
+   - Noisy power supply
+   - Loose connections</p>
+<ol>
+<li><strong>Wiring Problems</strong></li>
+<li>Incorrect pin connections</li>
+<li>Poor solder joints</li>
+<li>
+<p>Damaged jumper wires</p>
+</li>
+<li>
+<p><strong>Sensor Malfunction</strong></p>
+</li>
+<li>Defective HC-SR04 module</li>
+<li>Physical damage to sensor</li>
+</ol>
+<p><strong>Solutions:</strong></p>
+<pre><code class="language-cpp">// 1. Check power supply
+// Measure voltage at HC-SR04 VCC pin
+// Should be stable 5V ±0.2V
+
+// 2. Verify wiring
+NodeMCU  →  HC-SR04
+3.3V     →      VCC
+GND       →      GND  
+D6        →      TRIG
+D5        →      ECHO
+
+// 3. Test with known-good sensor
+// Replace HC-SR04 to rule out sensor failure
+</code></pre>
+<h4 id="issue-inconsistent-readings">Issue: Inconsistent Readings</h4>
+<p><strong>Symptoms:</strong>
+- Distance values fluctuating wildly
+- Readings don't match actual distances
+- Occasional zero or max values</p>
+<p><strong>Solutions:</strong></p>
+<pre><code class="language-cpp">// 1. Add software filtering
+#define FILTER_WINDOW 5
+int distanceReadings[FILTER_WINDOW];
+int currentReading = 0;
+
+int getFilteredDistance() {
+  // Add new reading
+  distanceReadings[currentReading] = readRawDistance();
+  currentReading = (currentReading + 1) % FILTER_WINDOW;
+
+  // Sort and return median
+  sort(distanceReadings, distanceReadings + FILTER_WINDOW);
+  return distanceReadings[FILTER_WINDOW / 2];
+}
+
+// 2. Add hardware filtering
+// Add 100nF capacitor between ECHO and GND
+// Add 1kΩ resistor in series with ECHO line
+</code></pre>
+<h3 id="haptic-motor-issues">Haptic Motor Issues</h3>
+<h4 id="issue-motors-not-vibrating">Issue: Motors Not Vibrating</h4>
+<p><strong>Symptoms:</strong>
+- No vibration when expected
+- Intermittent motor operation
+- Weak vibration intensity</p>
+<p><strong>Solutions:</strong></p>
+<pre><code class="language-cpp">// 1. Check transistor connections
+// Verify proper NPN transistor wiring
+// Emitter → GND, Base → GPIO (via 1kΩ), Collector → Motor(-)
+
+// 2. Test motors directly
+// Connect motor directly to 3.3V
+// If motor works, issue is in driver circuit
+
+// 3. Check GPIO configuration
+pinMode(MOTOR1_PIN, OUTPUT);
+digitalWrite(MOTOR1_PIN, HIGH);  // Should activate motor
+
+// 4. Verify power supply
+// Motors need 50-100mA each
+// Ensure power supply can handle total current
+</code></pre>
+<h4 id="issue-motors-too-weak">Issue: Motors Too Weak</h4>
+<p><strong>Solutions:</strong></p>
+<pre><code class="language-cpp">// 1. Increase supply voltage
+// Use 5V instead of 3.3V for motors
+// Ensure transistors can handle higher voltage
+
+// 2. Use more powerful motors
+// Higher current motors for stronger vibration
+// Check datasheet for specifications
+
+// 3. Reduce series resistance
+// Lower resistor value between GPIO and transistor base
+// 470Ω or 330Ω for more base current
+</code></pre>
+<h3 id="esp-now-communication-issues">ESP-NOW Communication Issues</h3>
+<h4 id="issue-packets-not-reaching-receiver">Issue: Packets Not Reaching Receiver</h4>
+<p><strong>Symptoms:</strong>
+- Transmitter shows "Delivery fail"
+- Receiver not receiving data
+- Intermittent connection</p>
+<p><strong>Solutions:</strong></p>
+<pre><code class="language-cpp">// 1. Check MAC addresses
+uint8_t receiverAddress[] = {0x24, 0x6F, 0x28, 0x12, 0x34, 0x56};
+
+// Print MAC addresses
+Serial.printf(&quot;Transmitter MAC: %s\n&quot;, WiFi.macAddress().c_str());
+Serial.printf(&quot;Receiver MAC: %02X:%02X:%02X:%02X:%02X:%02X\n&quot;,
+              receiverAddress[0], receiverAddress[1], receiverAddress[2],
+              receiverAddress[3], receiverAddress[4], receiverAddress[5]);
+</code></pre>
+<pre><code class="language-cpp">// 2. Increase transmission power
+// Add to setup()
+WiFi.setOutputPower(20.5);  // Maximum power (20.5dBm)
+
+// 3. Add retry logic
+#define MAX_RETRIES 3
+bool sendWithRetry(uint8_t* data, size_t size) {
+  for(int i = 0; i &lt; MAX_RETRIES; i++) {
+    esp_err_t result = esp_now_send(receiverAddress, data, size);
+    if(result == ESP_OK) return true;
+    delay(100);  // Wait between retries
+  }
+  return false;
+}
+</code></pre>
+<h2 id="software-issues">💻 Software Issues</h2>
+<h3 id="compilation-errors">Compilation Errors</h3>
+<h4 id="issue-esp8266-compilation-failures">Issue: ESP8266 Compilation Failures</h4>
+<p><strong>Common Errors:</strong></p>
+<pre><code>'ESP8266WiFi.h' not found
+'espnow.h' not found
+Sketch too large
+</code></pre>
+<p><strong>Solutions:</strong></p>
+<pre><code class="language-bash"># 1. Install ESP8266 core
+arduino-cli core install esp8266:esp8266
+
+# 2. Select correct board
+# Tools → Board → ESP8266 Boards → NodeMCU 1.0 (ESP-12E Module)
+
+# 3. Reduce program size
+// Remove debug output
+#undef DEBUG_ENABLED
+
+// Use smaller data types
+uint8_t instead of int
+uint16_t instead of long
+
+// Store constants in PROGMEM
+const char message[] PROGMEM = &quot;Hello&quot;;
+</code></pre>
+<h4 id="issue-esp32-compilation-failures">Issue: ESP32 Compilation Failures</h4>
+<p><strong>Solutions:</strong></p>
+<pre><code class="language-bash"># 1. Install ESP32 core
+arduino-cli core install esp32:esp32
+
+# 2. Select correct board
+# Tools → Board → ESP32 Arduino → ESP32 Dev Module
+
+# 3. Fix compatibility issues
+// Replace ESP8266-specific code
+#if defined(ESP8266)
+  // ESP8266 code
+#elif defined(ESP32)
+  // ESP32 code
+#endif
+</code></pre>
+<h3 id="runtime-issues">Runtime Issues</h3>
+<h4 id="issue-watchdog-timer-reset">Issue: Watchdog Timer Reset</h4>
+<p><strong>Symptoms:</strong>
+- Device restarts unexpectedly
+- Serial shows "wdt reset" or similar</p>
+<p><strong>Solutions:</strong></p>
+<pre><code class="language-cpp">// 1. Feed watchdog regularly
+#include &quot;esp_task_wdt.h&quot;
+
+void loop() {
+  esp_task_wdt_reset();  // Feed watchdog
+
+  // Your code here
+  delay(10);
+}
+
+// 2. Disable watchdog if needed (not recommended)
+esp_task_wdt_delete();
+</code></pre>
+<h4 id="issue-memory-overflow">Issue: Memory Overflow</h4>
+<p><strong>Symptoms:</strong>
+- Device crashes or reboots
+- Serial shows "heap corruption"
+- Variables changing unexpectedly</p>
+<p><strong>Solutions:</strong></p>
+<pre><code class="language-cpp">// 1. Monitor free heap
+Serial.printf(&quot;Free heap: %d\n&quot;, ESP.getFreeHeap());
+
+// 2. Use static allocation
+// Instead of dynamic arrays, use fixed-size arrays
+int sensorBuffer[100];  // Static allocation
+
+// 3. Reduce string usage
+// Use F() macro for string literals
+Serial.println(F(&quot;This saves RAM&quot;));
+
+// 4. Optimize data types
+// Use smallest possible data types
+uint8_t smallNumber = 100;  // Instead of int
+</code></pre>
+<h2 id="web-interface-issues">🌐 Web Interface Issues</h2>
+<h3 id="connection-problems">Connection Problems</h3>
+<h4 id="issue-wifi-hotspot-not-visible">Issue: WiFi Hotspot Not Visible</h4>
+<p><strong>Solutions:</strong></p>
+<pre><code class="language-cpp">// 1. Check WiFi initialization
+Serial.println(&quot;Setting up AP...&quot;);
+WiFi.softAP(ssid, password, channel, maxClients);
+
+// 2. Verify AP is active
+Serial.println(WiFi.softAPgetHostname());
+Serial.println(WiFi.softAPIP());
+</code></pre>
+<h4 id="issue-web-page-not-loading">Issue: Web Page Not Loading</h4>
+<p><strong>Solutions:</strong></p>
+<pre><code class="language-cpp">// 1. Check server is running
+server.begin();
+Serial.println(&quot;HTTP server started&quot;);
+
+// 2. Verify client handling
+void handleClient() {
+  WiFiClient client = server.available();
+  if(client) {
+    Serial.println(&quot;Client connected&quot;);
+    // Process request
+  }
+}
+</code></pre>
+<h3 id="api-response-issues">API Response Issues</h3>
+<h4 id="issue-json-data-not-updating">Issue: JSON Data Not Updating</h4>
+<p><strong>Solutions:</strong></p>
+<pre><code class="language-cpp">// 1. Check JSON serialization
+StaticJsonDocument&lt;256&gt; doc;
+doc[&quot;distance&quot;] = sensorData.distance;
+doc[&quot;timestamp&quot;] = sensorData.timestamp;
+
+// 2. Add CORS headers
+server.sendHeader(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);
+server.send(200, &quot;application/json&quot;, jsonBuffer);
+</code></pre>
+<h2 id="power-management-issues">🔋 Power Management Issues</h2>
+<h3 id="battery-life-problems">Battery Life Problems</h3>
+<h4 id="issue-short-battery-life">Issue: Short Battery Life</h4>
+<p><strong>Symptoms:</strong>
+- Battery drains in hours instead of days
+- Device gets hot during operation
+- Power consumption higher than expected</p>
+<p><strong>Solutions:</strong></p>
+<pre><code class="language-cpp">// 1. Enable power saving
+WiFi.setSleepMode(WIFI_MODEM_SLEEP);
+WiFi.forceSleepBegin();
+
+// 2. Optimize sensor reading frequency
+#define POWER_SAVE_INTERVAL 1000  // ms instead of 200
+unsigned long lastReading = 0;
+
+void loop() {
+  if(millis() - lastReading &gt; POWER_SAVE_INTERVAL) {
+    readSensors();
+    lastReading = millis();
+  }
+}
+
+// 3. Use deep sleep (ESP8266)
+ESP.deepSleep(0);  // Sleep indefinitely
+ESP.deepSleep(microsecondsToWakeupTime(5 * 60 * 1000000));  // 5 minutes
+</code></pre>
+<h2 id="testing-and-debugging">🧪 Testing and Debugging</h2>
+<h3 id="debug-mode-setup">Debug Mode Setup</h3>
+<pre><code class="language-cpp">// Enable comprehensive debugging
+#define DEBUG_ALL true
+
+#if DEBUG_ALL
+  #define DEBUG_SERIAL true
+  #define DEBUG_SENSORS true
+  #define DEBUG_WIFI true
+  #define DEBUG_MEMORY true
+#endif
+
+void debugPrint(const char* message) {
+  #if DEBUG_SERIAL
+    Serial.println(message);
+  #endif
+}
+</code></pre>
+<h3 id="signal-analysis">Signal Analysis</h3>
+<pre><code class="language-cpp">// Use oscilloscope to check signals
+// 1. Ultrasonic trigger pulse (should be clean 10μs)
+// 2. Ultrasonic echo return (clean digital signal)
+// 3. Motor control signals (proper PWM)
+// 4. Power supply stability (low ripple)
+</code></pre>
+<h2 id="getting-additional-help">📞 Getting Additional Help</h2>
+<h3 id="when-all-else-fails">When All Else Fails</h3>
+<ol>
+<li><strong>Reset to Known Good State</strong></li>
+<li>Flash original firmware</li>
+<li>Revert configuration changes</li>
+<li>
+<p>Test with minimal setup</p>
+</li>
+<li>
+<p><strong>Isolate Components</strong></p>
+</li>
+<li>Test each component separately</li>
+<li>Use known-good components for substitution</li>
+<li>
+<p>Document which component fails</p>
+</li>
+<li>
+<p><strong>Check Environment</strong></p>
+</li>
+<li>Try different USB ports</li>
+<li>Test with different power supply</li>
+<li>
+<p>Eliminate electrical interference</p>
+</li>
+<li>
+<p><strong>Community Support</strong></p>
+</li>
+<li>Check <a href="https://github.com/harshitworkmain/drishtiguide/issues">GitHub Issues</a></li>
+<li>Search for similar problems</li>
+<li>Ask questions with detailed information</li>
+</ol>
+<h3 id="contact-information">Contact Information</h3>
+<p>For additional support, reach out to:
+- <strong>Email</strong>: harshit.workmain@gmail.com
+- <strong>GitHub</strong>: https://github.com/harshitworkmain/drishtiguide/issues
+- <strong>Documentation</strong>: <a href="https://github.com/harshitworkmain/drishtiguide/wiki">Project Wiki</a></p>
+<h3 id="what-to-include-in-support-requests">What to Include in Support Requests</h3>
+<ol>
+<li><strong>System Information</strong></li>
+<li>ESP board type and version</li>
+<li>Arduino/PlatformIO version</li>
+<li>Operating system</li>
+<li>
+<p>Power supply details</p>
+</li>
+<li>
+<p><strong>Problem Description</strong></p>
+</li>
+<li>What you're trying to achieve</li>
+<li>What actually happens</li>
+<li>
+<p>Error messages or serial output</p>
+</li>
+<li>
+<p><strong>Troubleshooting Steps</strong></p>
+</li>
+<li>What you've already tried</li>
+<li>Results of each step</li>
+<li>
+<p>Any observations during testing</p>
+</li>
+<li>
+<p><strong>Hardware Details</strong></p>
+</li>
+<li>Component model numbers</li>
+<li>Wiring diagram/photo</li>
+<li>Configuration settings</li>
+</ol>
+<hr />
+<p><em>Last updated: 2025-02-01</em>
+<em>Author: Harshit Singh</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
