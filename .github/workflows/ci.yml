@@ -104,11 +104,13 @@ jobs:
       run: |
         BOARD_SAFE="${{ matrix.board }}"
         echo "BOARD_SAFE=${BOARD_SAFE//:/_}" >> $GITHUB_ENV
+        SKETCH_SAFE=$(basename ${{ matrix.sketch }})
+        echo "SKETCH_SAFE=${SKETCH_SAFE}" >> $GITHUB_ENV
 
     - name: Upload artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
-        name: firmware-${{ env.BOARD_SAFE }}-${{ github.sha }}
+        name: firmware-${{ env.BOARD_SAFE }}-${{ env.SKETCH_SAFE }}-${{ github.sha }}
         path: |
           ${{ matrix.sketch }}build/**/*.bin
           ${{ matrix.sketch }}build/**/*.hex
@@ -165,7 +167,7 @@ jobs:
     - uses: actions/checkout@v3
     
     - name: Download artifacts
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
     
     - name: Create Release
       uses: actions/create-release@v1
@@ -183,6 +185,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./firmware-esp8266_esp8266_nodemcuv2-${{ github.sha }}/transmitter.ino.bin
+        asset_path: ./firmware-esp8266_esp8266_nodemcuv2-transmitter-${{ github.sha }}/transmitter.ino.bin
         asset_name: transmitter_firmware.bin
         asset_content_type: application/octet-stream
