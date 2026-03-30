@@ -89,7 +89,8 @@ jobs:
     - name: Install platform
       run: |
         arduino-cli core update-index --additional-urls https://arduino.esp8266.com/stable/package_esp8266com_index.json,https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
-        arduino-cli core install ${{ matrix.board }} --additional-urls https://arduino.esp8266.com/stable/package_esp8266com_index.json,https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+        CORE=$(echo ${{ matrix.board }} | cut -d':' -f1,2)
+        arduino-cli core install $CORE --additional-urls https://arduino.esp8266.com/stable/package_esp8266com_index.json,https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
         
     - name: Install libraries
       run: |
