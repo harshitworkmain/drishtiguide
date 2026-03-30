@@ -35,7 +35,7 @@ jobs:
         # Basic syntax checking
         arduino-cli compile --fqbn esp8266:esp8266:nodemcuv2 src/esp8266-nodes/transmitter/
         arduino-cli compile --fqbn esp8266:esp8266:nodemcuv2 src/esp8266-nodes/receiver/
-        arduino-cli compile --fqbn esp32:esp32:devkitv1 src/esp32-main-controller/
+        arduino-cli compile --fqbn esp32:esp32:esp32doit-devkit-v1 src/esp32-main-controller/
 
   test:
     runs-on: ubuntu-latest
@@ -67,15 +67,15 @@ jobs:
       matrix:
         board: 
           - esp8266:esp8266:nodemcuv2
-          - esp32:esp32:devkitv1
+          - esp32:esp32:esp32doit-devkit-v1
         sketch:
           - src/esp8266-nodes/transmitter/
           - src/esp8266-nodes/receiver/
           - src/esp32-main-controller/
         exclude:
-          - board: esp32:esp32:devkitv1
+          - board: esp32:esp32:esp32doit-devkit-v1
             sketch: src/esp8266-nodes/transmitter/
-          - board: esp32:esp32:devkitv1
+          - board: esp32:esp32:esp32doit-devkit-v1
             sketch: src/esp8266-nodes/receiver/
           - board: esp8266:esp8266:nodemcuv2
             sketch: src/esp32-main-controller/
