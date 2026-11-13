@@ -172,6 +172,15 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         path: ./artifacts
+
+    - name: Prepare Release Assets
+      run: |
+        mkdir -p ./release_assets
+        find ./artifacts -type f -name "transmitter.ino.bin" -exec cp {} ./release_assets/transmitter_firmware.bin \;
+        find ./artifacts -type f -name "receiver.ino.bin" -exec cp {} ./release_assets/receiver_firmware.bin \;
+        find ./artifacts -type f -name "esp32-main-controller.ino.bin" -exec cp {} ./release_assets/esp32_main_controller_firmware.bin \;
+        find ./artifacts -type f -name "esp32-main-controller.ino.merged.bin" -exec cp {} ./release_assets/esp32_main_controller_merged.bin \;
+        ls -la ./release_assets/
     
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v2
@@ -182,6 +191,4 @@ jobs:
         draft: false
         prerelease: false
         generate_release_notes: true
-        files: |
-          ./artifacts/**/*.bin
-          ./artifacts/**/*.hex
+        files: ./release_assets/*.bin
