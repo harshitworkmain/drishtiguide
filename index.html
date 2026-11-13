@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
       
       
 
@@ -368,25 +368,14 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🚀 Quick Start
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🚀 Quick Start">
+    <nav class="md-nav" aria-label="📁 Project Structure">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#option-a-flash-distributed-multi-node-system" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prerequisites
+        Option A: Flash Distributed Multi-Node System
       
     </span>
   </a>
@@ -394,10 +383,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#option-b-flash-all-in-one-cloud-stick-firebase-rtdb" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation
+        Option B: Flash All-In-One Cloud Stick (Firebase RTDB)
       
     </span>
   </a>
@@ -645,6 +634,33 @@
   
   
     <li class="md-nav__item">
+      <a href="cloud_architecture_firebase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Architecture (Firebase & Vercel)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="api_documentation/" class="md-nav__link">
         
   
@@ -860,25 +876,14 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🚀 Quick Start
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🚀 Quick Start">
+    <nav class="md-nav" aria-label="📁 Project Structure">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#option-a-flash-distributed-multi-node-system" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prerequisites
+        Option A: Flash Distributed Multi-Node System
       
     </span>
   </a>
@@ -886,10 +891,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#option-b-flash-all-in-one-cloud-stick-firebase-rtdb" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation
+        Option B: Flash All-In-One Cloud Stick (Firebase RTDB)
       
     </span>
   </a>
@@ -1149,56 +1154,74 @@
 <h2 id="features">🎯 Features</h2>
 <h3 id="core-capabilities">🌟 Core Capabilities</h3>
 <ul>
-<li><strong>Real-time Obstacle Detection</strong>: Ultrasonic sensors detect obstacles up to 4 meters</li>
+<li><strong>Real-time Obstacle Detection</strong>: Ultrasonic sensors detect obstacles up to 4 meters (&lt;10cm alert LED)</li>
 <li><strong>Intelligent Haptic Feedback</strong>: 5-level vibration motor system for intuitive distance indication</li>
-<li><strong>Fall Detection System</strong>: Advanced algorithm using MPU6050 accelerometer/gyroscope</li>
-<li><strong>GPS Location Tracking</strong>: Real-time positioning with web-based monitoring</li>
-<li><strong>Emergency Alerts</strong>: Buzzer notifications for fall detection and inactivity</li>
-<li><strong>AI Scene Perception</strong>: YOLOv8-driven object detection using a logitech webcam feed via RPi4.</li>
+<li><strong>Fall Detection System</strong>: Advanced dual-threshold kinematic algorithm using MPU6050 accelerometer/gyroscope</li>
+<li><strong>Cloud &amp; GPS Location Tracking</strong>: Real-time positioning synchronized with Firebase Realtime Database and monitored globally on Vercel</li>
+<li><strong>Live Cloud Web Dashboard</strong>: <a href="https://stick-theta.vercel.app/">Guardian Web Monitor</a> with interactive Leaflet map and remote emergency resolution</li>
+<li><strong>Emergency Alerts</strong>: Buzzer notifications for fall detection, post-fall inactivity, and cloud alert push</li>
+<li><strong>AI Scene Perception</strong>: YOLOv8-driven object detection and LBPH facial recognition via webcam on edge hardware.</li>
 </ul>
 <h3 id="technical-highlights">🔧 Technical Highlights</h3>
 <ul>
-<li><strong>Wireless Communication</strong>: Low-latency ESP-NOW protocol for sensor-to-actor communication</li>
-<li><strong>Multi-node Architecture</strong>: Distributed ESP8266 nodes for scalable design</li>
-<li><strong>Edge Computing</strong>: Real-time sensor processing and decision making</li>
-<li><strong>Web Interface</strong>: RESTful API for remote monitoring and configuration</li>
+<li><strong>Dual Deployment Architectures</strong>:</li>
+<li><strong>Mode A (Distributed IoT &amp; Wearables)</strong>: ESP8266 Cane + ESP8266 Haptic Wearable (ESP-NOW &lt;5ms) + ESP32 Local Server + Raspberry Pi 4 Vision.</li>
+<li><strong>Mode B (Cloud All-in-One Stick)</strong>: Single ESP32 Cane with HC-SR04, Neo-M8N, MPU6050, Buzzer &amp; Obstacle LED streaming directly to Firebase RTDB and Vercel.</li>
+<li><strong>Wireless Communication</strong>: Low-latency ESP-NOW protocol and Wi-Fi HTTPS / WebSockets</li>
+<li><strong>Edge Computing &amp; Bi-Directional Safety</strong>: Fall alerts pushed instantly to cloud; caregivers can remotely resolve emergencies from Vercel to silence the stick alarm</li>
 <li><strong>Power Optimization</strong>: Efficient sleep modes and battery management</li>
 </ul>
 <h2 id="system-architecture">🏗️ System Architecture</h2>
 <p><img alt="System Architecture" src="assets/images/architecture.png" /></p>
-<p><em>(Note on the Architecture Map: While the visual diagram outlines the core ESP routing, the total ecosystem operates via a synchronized multi-tier node structure:)</em>
-* <strong>ESP8266 Smart-Cane Node (Transmitter):</strong> Scans the environment using HC-SR04 ultrasonic sensors to gather obstacle proximity data.
-* <strong>ESP8266 Wearable Hub (Receiver):</strong> Located in the jacket/wristband, providing 3D spatial haptic feedback via an array of vibration motors.
-* <strong>ESP32 Edge Orchestrator (Main Controller):</strong> Hosts the local web server dashboard, performs heavy fall detection (MPU6050) &amp; geo-location tagging (GPS NEO-6M), acting as the central nexus triggering buzzer alerts.
-* <strong>Raspberry Pi 4 Vision Gateway:</strong> Anchors the advanced visual pipeline, running OpenCV and Ultralytics YOLOv8 inference models on the Logitech webcam feed to provide powerful real-time object detection and augmented scene reality.</p>
+<p><em>(Note on the Architecture Map: The ecosystem supports two synergistic deployment models:)</em>
+* <strong>Mode A — Synchronized Multi-Node Mesh:</strong>
+  * <strong>ESP8266 Smart-Cane Node (Transmitter):</strong> Scans the environment using HC-SR04 ultrasonic sensors.
+  * <strong>ESP8266 Wearable Hub (Receiver):</strong> Located in the jacket/wristband, providing 3D spatial haptic feedback via 5 vibration motors.
+  * <strong>ESP32 Edge Orchestrator (Main Controller):</strong> Hosts local Wi-Fi AP <code>BlindStick_AP</code> (<code>192.168.4.1</code>), executes kinematic fall detection (MPU6050) &amp; geo-location tagging (GPS NEO-6M).
+  * <strong>Raspberry Pi 4 Vision Gateway (Empower):</strong> Runs YOLOv8 object detection, OpenCV face recognition, and async voice synthesis.
+* <strong>Mode B — Cloud Guardian All-in-One Stick:</strong>
+  * <strong>ESP32 NodeMCU-32S Cane:</strong> Integrates HC-SR04 (<code>TRIG:32</code>, <code>ECHO:33</code>), Obstacle LED (<code>GPIO 27</code>), Buzzer (<code>GPIO 4</code>), MPU6050 (<code>SDA:21</code>, <code>SCL:22</code>), and NEO-M8N GPS (<code>RX:16</code>, <code>TX:17</code>).
+  * <strong>Firebase Realtime Database:</strong> Sub-second telemetry sync (<code>/stick/latitude</code>, <code>/stick/longitude</code>, <code>/stick/fallDetected</code>, <code>/stick/lastFallTime</code>).
+  * <strong>Guardian Vercel Web Dashboard (<a href="https://stick-theta.vercel.app/">https://stick-theta.vercel.app/</a>):</strong> Real-time GPS mapping and caregiver remote emergency resolution.</p>
 <h3 id="logic-flow">Logic &amp; Flow</h3>
 <p><img alt="Flow Diagram" src="assets/images/flow-diagram.png" /></p>
 <h2 id="project-structure">📁 Project Structure</h2>
 <pre><code>drishtiguide/
 ├── 📁 assets/                  # Media assets, testing results, diagrams
 ├── 📁 src/                     # Source code
-│   ├── 📁 esp8266-nodes/       # ESP8266 sensor nodes
-│   ├── 📁 esp32-main-controller/ # Main ESP32 controller
-│   └── 📁 web-interface/       # Web UI for monitoring
-├── 📁 hardware/                # Hardware designs &amp; specs
+│   ├── 📁 esp8266-nodes/       # ESP8266 sensor &amp; haptic nodes (ESP-NOW)
+│   ├── 📁 esp32-main-controller/ # Main ESP32 controller (Local AP mode)
+│   ├── 📁 esp32-cloud-stick/   # All-in-one ESP32 Cloud Cane (Firebase RTDB)
+│   ├── 📁 web-interface/       # Local web UI for ESP32 AP
+│   └── 📁 cloud-interface/     # Guardian Vercel cloud dashboard (Live: stick-theta.vercel.app)
+├── 📁 Empower/                 # AI Vision: YOLOv8 + LBPH Face Recognition
+│   ├── 📁 yolov8 model/        # Real-time object detection &amp; voice feedback
+│   └── 📁 real-time-face-recognition/ # Face dataset collection, training &amp; recognition
+├── 📁 hardware/                # Schematics, BOM, and hardware specifications
+├── 📁 docs/                    # MkDocs documentation site
+├── 📁 tests/                   # Pytest unit and integration test suites
+├── 📁 tools/                   # Calibration, data logging, and flash utilities
+└── 📁 deployment/              # Environment setup and build scripts
+</code></pre>
+<p>├── 📁 hardware/                # Hardware designs &amp; specs
 ├── 📁 docs/                   # Documentation
 ├── 📁 tests/                  # Test suites
 ├── 📁 tools/                  # Development utilities
-└── 📁 deployment/            # Production setup
-</code></pre>
-<h2 id="quick-start">🚀 Quick Start</h2>
-<h3 id="prerequisites">Prerequisites</h3>
-<ul>
-<li>Arduino IDE 1.8.19+ or PlatformIO</li>
-<li>ESP8266 (2x) and ESP32 development boards</li>
-<li>Raspberry Pi 4 (for YOLO AI vision)</li>
-<li>Required sensors and components (see <a href="hardware/bill_of_materials/">Hardware Specifications</a>)</li>
-</ul>
-<h3 id="installation">Installation</h3>
-<ol>
-<li><strong>Clone the repository</strong></li>
-</ol>
-<pre><code class="language-bash">git clone https://github.com/harshitworkmain/drishtiguide.git
+└── 📁 deployment/            # Production setup</p>
+<pre><code>
+## 🚀 Quick Start
+
+### Prerequisites
+- Arduino IDE 1.8.19+ or PlatformIO
+- ESP8266 (2x) and ESP32 development boards
+- Raspberry Pi 4 (for YOLO AI vision)
+- Required sensors and components (see [Hardware Specifications](hardware/bill_of_materials/))
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/harshitworkmain/drishtiguide.git
 cd drishtiguide
 </code></pre>
 <ol>
@@ -1219,22 +1242,28 @@ cd drishtiguide
 <p><strong>Flash firmware</strong></p>
 </li>
 </ol>
-<pre><code class="language-bash"># Flash transmitter node
+<h3 id="option-a-flash-distributed-multi-node-system">Option A: Flash Distributed Multi-Node System</h3>
+<pre><code class="language-bash"># Flash transmitter node (ESP8266)
 arduino-cli compile --fqbn esp8266:esp8266:nodemcuv2 src/esp8266-nodes/transmitter/
 arduino-cli upload --fqbn esp8266:esp8266:nodemcuv2 --port /dev/ttyUSB0 src/esp8266-nodes/transmitter/
 
-# Flash receiver node
+# Flash receiver node (ESP8266)
 arduino-cli compile --fqbn esp8266:esp8266:nodemcuv2 src/esp8266-nodes/receiver/
 arduino-cli upload --fqbn esp8266:esp8266:nodemcuv2 --port /dev/ttyUSB1 src/esp8266-nodes/receiver/
 
-# Flash main controller
+# Flash main controller (ESP32 Local AP Mode)
 arduino-cli compile --fqbn esp32:esp32:devkitv1 src/esp32-main-controller/
 arduino-cli upload --fqbn esp32:esp32:devkitv1 --port /dev/ttyUSB2 src/esp32-main-controller/
 </code></pre>
+<h3 id="option-b-flash-all-in-one-cloud-stick-firebase-rtdb">Option B: Flash All-In-One Cloud Stick (Firebase RTDB)</h3>
+<pre><code class="language-bash"># Configure WiFi &amp; Firebase credentials in src/esp32-cloud-stick/config.h
+arduino-cli compile --fqbn esp32:esp32:devkitv1 src/esp32-cloud-stick/
+arduino-cli upload --fqbn esp32:esp32:devkitv1 --port /dev/ttyUSB0 src/esp32-cloud-stick/
+</code></pre>
 <ol>
 <li><strong>Monitor system</strong></li>
-<li>Connect to "BlindStick_AP" WiFi hotspot</li>
-<li>Access monitoring interface at <code>http://192.168.4.1/gps</code></li>
+<li><strong>Local AP Mode</strong>: Connect to <code>BlindStick_AP</code> and open <code>http://192.168.4.1/gps</code></li>
+<li><strong>Cloud Guardian Mode</strong>: Open the live dashboard at <a href="https://stick-theta.vercel.app/">https://stick-theta.vercel.app/</a> to view real-time GPS tracking and emergency status.</li>
 </ol>
 <h2 id="technical-specifications">📊 Technical Specifications</h2>
 <h3 id="performance-metrics">Performance Metrics</h3>
@@ -1393,7 +1422,7 @@ python -m pytest test_espnow_communication.py -v
       <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

@@ -1,0 +1,852 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../system_architecture/">
+      
+      
+        <link rel="next" href="../api_documentation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Cloud Architecture (Firebase & Vercel) - DrishtiGuide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cloud-connected-architecture-firebase-telemetry" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DrishtiGuide" class="md-header__button md-logo" aria-label="DrishtiGuide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DrishtiGuide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cloud Architecture (Firebase & Vercel)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DrishtiGuide" class="md-nav__button md-logo" aria-label="DrishtiGuide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    DrishtiGuide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Architecture (Firebase & Vercel)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Architecture (Firebase & Vercel)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ System Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ System Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-esp32-nodemcu-32s-all-in-one-stick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ESP32 NodeMCU-32S All-In-One Stick
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-google-firebase-realtime-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Google Firebase Realtime Database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-guardian-vercel-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Guardian Vercel Frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-closed-loop-safety-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 The Closed-Loop Safety Cycle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-and-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Setup and Deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Setup and Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-flash-the-esp32-cloud-stick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Flash the ESP32 Cloud Stick
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-deploy-web-interface-to-vercel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Deploy Web Interface to Vercel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api_documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ System Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ System Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-esp32-nodemcu-32s-all-in-one-stick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ESP32 NodeMCU-32S All-In-One Stick
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-google-firebase-realtime-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Google Firebase Realtime Database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-guardian-vercel-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Guardian Vercel Frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-closed-loop-safety-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 The Closed-Loop Safety Cycle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-and-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Setup and Deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Setup and Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-flash-the-esp32-cloud-stick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Flash the ESP32 Cloud Stick
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-deploy-web-interface-to-vercel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Deploy Web Interface to Vercel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cloud-connected-architecture-firebase-telemetry">Cloud-Connected Architecture &amp; Firebase Telemetry</h1>
+<h2 id="overview">🌐 Overview</h2>
+<p>The <strong>DrishtiGuide Guardian Cloud System</strong> extends the assistive stick from a purely localized sensor into a globally connected IoT health &amp; safety platform. By streaming high-priority telemetry to <strong>Firebase Realtime Database (RTDB)</strong> and serving an ultra-low-latency, responsive web dashboard deployed on <strong>Vercel</strong> (<a href="https://stick-theta.vercel.app/">https://stick-theta.vercel.app/</a>), caregivers and family members can monitor the user's location and receive emergency alerts anywhere in the world.</p>
+<pre><code>┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                        GUARDIAN CLOUD TELEMETRY PIPELINE                               │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+
+ [ ESP32 Cloud Stick ]
+   - HC-SR04 Proximity (&lt;10cm) ──► Obstacle LED (GPIO27)
+   - MPU6050 6-Axis Motion      ──► Dual-Threshold Fall Detection (&lt;0.3g, &gt;2.8g)
+   - NEO-M8N / NEO-6M GNSS      ──► Lat / Long Geolocation
+   - Buzzer (GPIO4)             ──► Fall &amp; Inactivity Acoustic Alarms
+           │
+           │ HTTPS / WebSockets (WiFi Station Mode)
+           ▼
+ [ Google Firebase Realtime Database ]
+   stick-ff202-default-rtdb.asia-southeast1.firebasedatabase.app
+   │
+   ├── /stick/latitude      : 12.840600
+   ├── /stick/longitude     : 80.153400
+   ├── /stick/fallDetected  : true | false
+   └── /stick/lastFallTime  : &quot;14:32:15&quot;
+           │
+           │ Real-Time Value Events (db.ref('stick').on('value', ...))
+           ▼
+ [ Guardian Web Dashboard (Vercel) ]
+   https://stick-theta.vercel.app/
+   - Dark-mode glassmorphic Tailwind UI
+   - Live Leaflet.js Map with CartoDB Dark Matter tiles
+   - Emergency Pulse Glow &amp; Alert Status
+   - Caregiver &quot;RESOLVE EMERGENCY&quot; Action Button
+           │
+           │ Caregiver Clicks [RESOLVE EMERGENCY]
+           ▼
+   Writes { fallDetected: false } back to Firebase
+           │
+           ▼
+   ESP32 detects remote resolution, silences buzzer, resets alarm state!
+</code></pre>
+<hr />
+<h2 id="system-components">🏗️ System Components</h2>
+<h3 id="1-esp32-nodemcu-32s-all-in-one-stick">1. ESP32 NodeMCU-32S All-In-One Stick</h3>
+<ul>
+<li><strong>Firmware Location</strong>: <a href="../src/esp32-cloud-stick/esp32-cloud-stick.ino">src/esp32-cloud-stick/esp32-cloud-stick.ino</a></li>
+<li><strong>Primary Duties</strong>:</li>
+<li>Continuous ultrasonic scanning on pins <code>TRIG=32</code> and <code>ECHO=33</code>. Lights up <code>OBSTACLE_LED=27</code> when distance $&lt;10\text{ cm}$.</li>
+<li>Fall detection via MPU6050 on I2C (<code>SDA=21</code>, <code>SCL=22</code>).</li>
+<li>Serial GPS parsing on UART2 (<code>RX=16</code>, <code>TX=17</code>).</li>
+<li>Non-blocking acoustic alert driving on <code>BUZZER_PIN=4</code>.</li>
+<li>Cloud synchronization via <code>Firebase_ESP_Client</code> library.</li>
+</ul>
+<h3 id="2-google-firebase-realtime-database">2. Google Firebase Realtime Database</h3>
+<ul>
+<li><strong>Host</strong>: <code>stick-ff202-default-rtdb.asia-southeast1.firebasedatabase.app</code></li>
+<li><strong>Authentication</strong>: Database secret or Firebase Token Authentication.</li>
+<li><strong>Latency</strong>: Sub-second synchronization across connected clients worldwide.</li>
+<li><strong>Data Model</strong>:
+  <code>json
+  {
+    "stick": {
+      "latitude": 12.840600,
+      "longitude": 80.153400,
+      "fallDetected": false,
+      "lastFallTime": "14:32:15"
+    }
+  }</code></li>
+</ul>
+<h3 id="3-guardian-vercel-frontend">3. Guardian Vercel Frontend</h3>
+<ul>
+<li><strong>Live URL</strong>: <a href="https://stick-theta.vercel.app/">https://stick-theta.vercel.app/</a></li>
+<li><strong>Source Code</strong>: <a href="../src/cloud-interface/index.html">src/cloud-interface/index.html</a></li>
+<li><strong>Features</strong>:</li>
+<li>Tailwind CSS glassmorphic aesthetic (<code>Plus Jakarta Sans</code> font).</li>
+<li>Leaflet.js interactive dark-mode map panning automatically to live GPS coordinates.</li>
+<li>Emergency banner and red pulsing glow upon critical fall events.</li>
+<li>One-click <strong>RESOLVE EMERGENCY</strong> button updating Firebase to clear alarms remotely.</li>
+</ul>
+<hr />
+<h2 id="the-closed-loop-safety-cycle">🔄 The Closed-Loop Safety Cycle</h2>
+<pre><code>1. Physical Fall Event Occurs
+   └─► Total Acceleration drops &lt; 0.3g (Free-fall)
+   └─► Followed within 300ms by collision spike &gt; 2.8g (Impact)
+   └─► ESP32 marks fallDetected = true
+
+2. Local Notification &amp; Cloud Upload
+   └─► Buzzer triggers immediate double-beep alarm (GPIO 4)
+   └─► ESP32 immediately writes to Firebase:
+         /stick/fallDetected = true
+         /stick/lastFallTime = &quot;HH:MM:SS&quot;
+         /stick/latitude     = &lt;currentLat&gt;
+         /stick/longitude    = &lt;currentLon&gt;
+
+3. Caregiver Dashboard Activation
+   └─► Vercel web app receives instant Firebase update via WebSocket
+   └─► Dashboard enters emergency mode:
+         - Status badge turns into pulsing red alert: &quot;🚨 EMERGENCY: FALL DETECTED&quot;
+         - Map container acquires animated emergency-glow shadow
+         - Marker centers on exact location
+         - &quot;RESOLVE EMERGENCY&quot; button appears
+
+4. Remote Resolution
+   └─► Caregiver assists the user and clicks [RESOLVE EMERGENCY]
+   └─► Web app pushes /stick/fallDetected = false to Firebase
+   └─► ESP32 Stick detects status change, silences the buzzer, and resumes normal monitoring
+</code></pre>
+<hr />
+<h2 id="setup-and-deployment">⚙️ Setup and Deployment</h2>
+<h3 id="1-flash-the-esp32-cloud-stick">1. Flash the ESP32 Cloud Stick</h3>
+<ol>
+<li>Connect ESP32 to computer.</li>
+<li>Edit credentials in <a href="../src/esp32-cloud-stick/config.h">src/esp32-cloud-stick/config.h</a>:
+   <code>cpp
+   #define WIFI_SSID "your_ssid"
+   #define WIFI_PASSWORD "your_password"
+   #define FIREBASE_HOST "your-project-default-rtdb.firebaseio.com"
+   #define FIREBASE_AUTH "your_database_secret"</code></li>
+<li>Compile and flash using Arduino CLI:
+   <code>bash
+   arduino-cli compile --fqbn esp32:esp32:devkitv1 src/esp32-cloud-stick/
+   arduino-cli upload --fqbn esp32:esp32:devkitv1 --port /dev/ttyUSB0 src/esp32-cloud-stick/</code></li>
+</ol>
+<h3 id="2-deploy-web-interface-to-vercel">2. Deploy Web Interface to Vercel</h3>
+<ol>
+<li>Ensure the <code>databaseURL</code> in <a href="../src/cloud-interface/index.html">src/cloud-interface/index.html</a> matches your Firebase instance.</li>
+<li>Deploy with Vercel CLI:
+   <code>bash
+   cd src/cloud-interface
+   vercel deploy --prod</code></li>
+<li>Your live monitor is immediately accessible from any phone, tablet, or PC.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

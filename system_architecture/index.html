@@ -12,14 +12,14 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../api_documentation/">
+        <link rel="next" href="../cloud_architecture_firebase/">
       
       
         
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
       
 
@@ -338,6 +338,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#4-cloud-connected-all-in-one-stick-esp32-firebase-vercel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Cloud-Connected All-In-One Stick (ESP32 + Firebase + Vercel)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -581,6 +592,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../cloud_architecture_firebase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Architecture (Firebase & Vercel)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../api_documentation/" class="md-nav__link">
         
   
@@ -731,6 +769,17 @@
     <span class="md-ellipsis">
       
         3. Main Controller (ESP32 + Sensors + WiFi)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-cloud-connected-all-in-one-stick-esp32-firebase-vercel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Cloud-Connected All-In-One Stick (ESP32 + Firebase + Vercel)
       
     </span>
   </a>
@@ -1044,6 +1093,41 @@
 - WiFi hotspot for remote monitoring
 - Emergency alert management
 - System health monitoring</p>
+<h3 id="4-cloud-connected-all-in-one-stick-esp32-firebase-vercel">4. Cloud-Connected All-In-One Stick (ESP32 + Firebase + Vercel)</h3>
+<pre><code>┌─────────────────────────────────────────────────────────┐
+│              ESP32 NodeMCU-32S Cloud Stick              │
+│  ┌─────────────┐ ┌─────────────┐ ┌───────────────────┐  │
+│  │   HC-SR04   │ │   MPU6050   │ │    NEO-M8N/6M     │  │
+│  │ Ultrasonic  │ │  IMU Sensor │ │    GPS Module     │  │
+│  │ (TRIG:32    │ │ (SDA:21     │ │ (RX:16            │  │
+│  │  ECHO:33)   │ │  SCL:22)    │ │  TX:17)           │  │
+│  └─────────────┘ └─────────────┘ └───────────────────┘  │
+│  ┌─────────────┐ ┌─────────────┐ ┌───────────────────┐  │
+│  │Obstacle LED │ │   Buzzer    │ │  Firebase RTDB    │  │
+│  │  (GPIO 27)  │ │  (GPIO 4)   │ │  Client Engine    │  │
+│  └─────────────┘ └─────────────┘ └───────────────────┘  │
+└─────────────────────────────────────────────────────────┘
+                             │
+                  WiFi (HTTPS / WebSockets)
+                             ▼
+┌─────────────────────────────────────────────────────────┐
+│               Firebase Realtime Database                │
+│    /stick/latitude, /stick/longitude, /stick/fallDetected│
+└─────────────────────────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────┐
+│             Guardian Cloud Web Dashboard                │
+│            https://stick-theta.vercel.app/              │
+│      (Live Map, Real-Time Alerts, Remote Reset)         │
+└─────────────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>Responsibilities:</strong>
+- Single-board standalone smart cane operation
+- Real-time obstacle warning LED (&lt;10cm proximity)
+- Dual-stage kinematic fall detection &amp; acoustic alarming
+- Sub-second global synchronization via Firebase Realtime Database
+- Bi-directional remote emergency resolution by caregivers via Vercel dashboard</p>
 <h2 id="data-flow-architecture">🔄 Data Flow Architecture</h2>
 <pre><code>Environment Obstacles
         ↓
@@ -1282,7 +1366,7 @@ if (esp_now_send(receiverAddress, (uint8_t *) &amp;myData, sizeof(myData)) != 0)
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
