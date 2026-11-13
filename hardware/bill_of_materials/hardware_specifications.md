@@ -62,16 +62,18 @@ This document provides detailed technical specifications for all hardware compon
 | Data Rate | 8Hz - 1kHz | Configurable sampling rate |
 | I2C Address | 0x68 | Default I2C address |
 
-### NEO-6M GPS Module
-| Parameter | Value | Description |
-|-----------|-------|-------------|
-| Supply Voltage | 3.3V - 5V | Operating voltage range |
-| Current Consumption | 25mA | Average power draw |
-| Channels | 50 | GPS tracking channels |
-| Accuracy | 2.5m | Position accuracy (open sky) |
-| Update Rate | 5Hz | Maximum update frequency |
-| Baud Rate | 4800 - 115200 | Configurable serial rate |
-| Protocol | NMEA 0183 | Standard GPS protocol |
+### NEO-6M / NEO-M8N GPS Module
+| Parameter | NEO-6M Value | NEO-M8N Value | Description |
+|-----------|--------------|---------------|-------------|
+| Supply Voltage | 3.3V - 5V | 3.3V - 5V | Operating voltage range |
+| Current Consumption | 25mA | 35mA | Average power draw |
+| Constellations | GPS | GPS, GLONASS, BeiDou, Galileo | GNSS satellite support |
+| Channels | 50 | 72 | Concurrent tracking channels |
+| Position Accuracy | 2.5m | 1.5m - 2.0m | Position accuracy (open sky) |
+| Update Rate | 5Hz max | 10Hz - 18Hz max | Maximum update frequency |
+| Default Baud Rate | 9600 bps | 9600 bps | Configurable serial rate |
+| Protocol | NMEA 0183 | NMEA 0183 / UBX | Standard GPS protocol |
+| Cold Start TTFF | 27s | 26s | Time to first fix |
 
 ## ⚡ Actuator Specifications
 

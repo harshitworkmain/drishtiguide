@@ -46,11 +46,15 @@ docs/.doxygen/
 test-results/
 .coverage
 .pytest_cache/
+__pycache__/
+*.py[cod]
 
 # Configuration Files with Sensitive Data
 **/config.h.local
 **/secrets.h
 **/wifi_credentials.h
+src/esp32-cloud-stick/config.h
+!src/esp32-cloud-stick/config.example.h
 
 # Flash Tools
 *.part

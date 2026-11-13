@@ -30,7 +30,8 @@ class FlashUtility:
         self.projects = {
             'transmitter': 'src/esp8266-nodes/transmitter/transmitter.ino',
             'receiver': 'src/esp8266-nodes/receiver/receiver.ino',
-            'main_controller': 'src/esp32-main-controller/main_controller.ino'
+            'main_controller': 'src/esp32-main-controller/esp32-main-controller.ino',
+            'cloud_stick': 'src/esp32-cloud-stick/esp32-cloud-stick.ino'
         }
         
     def find_arduino_cli(self):
@@ -328,7 +329,7 @@ echo "Flashing complete!"
 
 def main():
     parser = argparse.ArgumentParser(description='DrishtiGuide Flash Utility')
-    parser.add_argument('--project', choices=['transmitter', 'receiver', 'main_controller'],
+    parser.add_argument('--project', choices=['transmitter', 'receiver', 'main_controller', 'cloud_stick'],
                        help='Project to flash')
     parser.add_argument('--port', help='Serial port to use')
     parser.add_argument('--board', help='Board FQBN (e.g., esp8266:esp8266:nodemcuv2)')

@@ -73,6 +73,44 @@ DrishtiGuide employs a distributed multi-node architecture designed for reliabil
 - Emergency alert management
 - System health monitoring
 
+### 4. Cloud-Connected All-In-One Stick (ESP32 + Firebase + Vercel)
+```
+┌─────────────────────────────────────────────────────────┐
+│              ESP32 NodeMCU-32S Cloud Stick              │
+│  ┌─────────────┐ ┌─────────────┐ ┌───────────────────┐  │
+│  │   HC-SR04   │ │   MPU6050   │ │    NEO-M8N/6M     │  │
+│  │ Ultrasonic  │ │  IMU Sensor │ │    GPS Module     │  │
+│  │ (TRIG:32    │ │ (SDA:21     │ │ (RX:16            │  │
+│  │  ECHO:33)   │ │  SCL:22)    │ │  TX:17)           │  │
+│  └─────────────┘ └─────────────┘ └───────────────────┘  │
+│  ┌─────────────┐ ┌─────────────┐ ┌───────────────────┐  │
+│  │Obstacle LED │ │   Buzzer    │ │  Firebase RTDB    │  │
+│  │  (GPIO 27)  │ │  (GPIO 4)   │ │  Client Engine    │  │
+│  └─────────────┘ └─────────────┘ └───────────────────┘  │
+└─────────────────────────────────────────────────────────┘
+                             │
+                  WiFi (HTTPS / WebSockets)
+                             ▼
+┌─────────────────────────────────────────────────────────┐
+│               Firebase Realtime Database                │
+│    /stick/latitude, /stick/longitude, /stick/fallDetected│
+└─────────────────────────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────┐
+│             Guardian Cloud Web Dashboard                │
+│            https://stick-theta.vercel.app/              │
+│      (Live Map, Real-Time Alerts, Remote Reset)         │
+└─────────────────────────────────────────────────────────┘
+```
+
+**Responsibilities:**
+- Single-board standalone smart cane operation
+- Real-time obstacle warning LED (<10cm proximity)
+- Dual-stage kinematic fall detection & acoustic alarming
+- Sub-second global synchronization via Firebase Realtime Database
+- Bi-directional remote emergency resolution by caregivers via Vercel dashboard
+
 ## 🔄 Data Flow Architecture
 
 ```

@@ -39,29 +39,36 @@ Integrated IoT assistive ecosystem for real-time obstacle evasion & safety monit
 ## 🎯 Features
 
 ### 🌟 Core Capabilities
-- **Real-time Obstacle Detection**: Ultrasonic sensors detect obstacles up to 4 meters
+- **Real-time Obstacle Detection**: Ultrasonic sensors detect obstacles up to 4 meters (<10cm alert LED)
 - **Intelligent Haptic Feedback**: 5-level vibration motor system for intuitive distance indication
-- **Fall Detection System**: Advanced algorithm using MPU6050 accelerometer/gyroscope
-- **GPS Location Tracking**: Real-time positioning with web-based monitoring
-- **Emergency Alerts**: Buzzer notifications for fall detection and inactivity
-- **AI Scene Perception**: YOLOv8-driven object detection using a logitech webcam feed via RPi4.
+- **Fall Detection System**: Advanced dual-threshold kinematic algorithm using MPU6050 accelerometer/gyroscope
+- **Cloud & GPS Location Tracking**: Real-time positioning synchronized with Firebase Realtime Database and monitored globally on Vercel
+- **Live Cloud Web Dashboard**: [Guardian Web Monitor](https://stick-theta.vercel.app/) with interactive Leaflet map and remote emergency resolution
+- **Emergency Alerts**: Buzzer notifications for fall detection, post-fall inactivity, and cloud alert push
+- **AI Scene Perception**: YOLOv8-driven object detection and LBPH facial recognition via webcam on edge hardware.
 
 ### 🔧 Technical Highlights
-- **Wireless Communication**: Low-latency ESP-NOW protocol for sensor-to-actor communication
-- **Multi-node Architecture**: Distributed ESP8266 nodes for scalable design
-- **Edge Computing**: Real-time sensor processing and decision making
-- **Web Interface**: RESTful API for remote monitoring and configuration
+- **Dual Deployment Architectures**:
+  - **Mode A (Distributed IoT & Wearables)**: ESP8266 Cane + ESP8266 Haptic Wearable (ESP-NOW <5ms) + ESP32 Local Server + Raspberry Pi 4 Vision.
+  - **Mode B (Cloud All-in-One Stick)**: Single ESP32 Cane with HC-SR04, Neo-M8N, MPU6050, Buzzer & Obstacle LED streaming directly to Firebase RTDB and Vercel.
+- **Wireless Communication**: Low-latency ESP-NOW protocol and Wi-Fi HTTPS / WebSockets
+- **Edge Computing & Bi-Directional Safety**: Fall alerts pushed instantly to cloud; caregivers can remotely resolve emergencies from Vercel to silence the stick alarm
 - **Power Optimization**: Efficient sleep modes and battery management
 
 ## 🏗️ System Architecture
 
 ![System Architecture](assets/images/architecture.png)
 
-*(Note on the Architecture Map: While the visual diagram outlines the core ESP routing, the total ecosystem operates via a synchronized multi-tier node structure:)*
-* **ESP8266 Smart-Cane Node (Transmitter):** Scans the environment using HC-SR04 ultrasonic sensors to gather obstacle proximity data.
-* **ESP8266 Wearable Hub (Receiver):** Located in the jacket/wristband, providing 3D spatial haptic feedback via an array of vibration motors.
-* **ESP32 Edge Orchestrator (Main Controller):** Hosts the local web server dashboard, performs heavy fall detection (MPU6050) & geo-location tagging (GPS NEO-6M), acting as the central nexus triggering buzzer alerts.
-* **Raspberry Pi 4 Vision Gateway:** Anchors the advanced visual pipeline, running OpenCV and Ultralytics YOLOv8 inference models on the Logitech webcam feed to provide powerful real-time object detection and augmented scene reality.
+*(Note on the Architecture Map: The ecosystem supports two synergistic deployment models:)*
+* **Mode A — Synchronized Multi-Node Mesh:**
+  * **ESP8266 Smart-Cane Node (Transmitter):** Scans the environment using HC-SR04 ultrasonic sensors.
+  * **ESP8266 Wearable Hub (Receiver):** Located in the jacket/wristband, providing 3D spatial haptic feedback via 5 vibration motors.
+  * **ESP32 Edge Orchestrator (Main Controller):** Hosts local Wi-Fi AP `BlindStick_AP` (`192.168.4.1`), executes kinematic fall detection (MPU6050) & geo-location tagging (GPS NEO-6M).
+  * **Raspberry Pi 4 Vision Gateway (Empower):** Runs YOLOv8 object detection, OpenCV face recognition, and async voice synthesis.
+* **Mode B — Cloud Guardian All-in-One Stick:**
+  * **ESP32 NodeMCU-32S Cane:** Integrates HC-SR04 (`TRIG:32`, `ECHO:33`), Obstacle LED (`GPIO 27`), Buzzer (`GPIO 4`), MPU6050 (`SDA:21`, `SCL:22`), and NEO-M8N GPS (`RX:16`, `TX:17`).
+  * **Firebase Realtime Database:** Sub-second telemetry sync (`/stick/latitude`, `/stick/longitude`, `/stick/fallDetected`, `/stick/lastFallTime`).
+  * **Guardian Vercel Web Dashboard ([https://stick-theta.vercel.app/](https://stick-theta.vercel.app/)):** Real-time GPS mapping and caregiver remote emergency resolution.
 
 ### Logic & Flow
 ![Flow Diagram](assets/images/flow-diagram.png)
@@ -72,9 +79,20 @@ Integrated IoT assistive ecosystem for real-time obstacle evasion & safety monit
 drishtiguide/
 ├── 📁 assets/                  # Media assets, testing results, diagrams
 ├── 📁 src/                     # Source code
-│   ├── 📁 esp8266-nodes/       # ESP8266 sensor nodes
-│   ├── 📁 esp32-main-controller/ # Main ESP32 controller
-│   └── 📁 web-interface/       # Web UI for monitoring
+│   ├── 📁 esp8266-nodes/       # ESP8266 sensor & haptic nodes (ESP-NOW)
+│   ├── 📁 esp32-main-controller/ # Main ESP32 controller (Local AP mode)
+│   ├── 📁 esp32-cloud-stick/   # All-in-one ESP32 Cloud Cane (Firebase RTDB)
+│   ├── 📁 web-interface/       # Local web UI for ESP32 AP
+│   └── 📁 cloud-interface/     # Guardian Vercel cloud dashboard (Live: stick-theta.vercel.app)
+├── 📁 Empower/                 # AI Vision: YOLOv8 + LBPH Face Recognition
+│   ├── 📁 yolov8 model/        # Real-time object detection & voice feedback
+│   └── 📁 real-time-face-recognition/ # Face dataset collection, training & recognition
+├── 📁 hardware/                # Schematics, BOM, and hardware specifications
+├── 📁 docs/                    # MkDocs documentation site
+├── 📁 tests/                   # Pytest unit and integration test suites
+├── 📁 tools/                   # Calibration, data logging, and flash utilities
+└── 📁 deployment/              # Environment setup and build scripts
+```
 ├── 📁 hardware/                # Hardware designs & specs
 ├── 📁 docs/                   # Documentation
 ├── 📁 tests/                  # Test suites
@@ -108,23 +126,31 @@ cd drishtiguide
 - Set WiFi credentials in `src/esp32-main-controller/config.h`
 
 4. **Flash firmware**
+### Option A: Flash Distributed Multi-Node System
 ```bash
-# Flash transmitter node
+# Flash transmitter node (ESP8266)
 arduino-cli compile --fqbn esp8266:esp8266:nodemcuv2 src/esp8266-nodes/transmitter/
 arduino-cli upload --fqbn esp8266:esp8266:nodemcuv2 --port /dev/ttyUSB0 src/esp8266-nodes/transmitter/
 
-# Flash receiver node
+# Flash receiver node (ESP8266)
 arduino-cli compile --fqbn esp8266:esp8266:nodemcuv2 src/esp8266-nodes/receiver/
 arduino-cli upload --fqbn esp8266:esp8266:nodemcuv2 --port /dev/ttyUSB1 src/esp8266-nodes/receiver/
 
-# Flash main controller
+# Flash main controller (ESP32 Local AP Mode)
 arduino-cli compile --fqbn esp32:esp32:devkitv1 src/esp32-main-controller/
 arduino-cli upload --fqbn esp32:esp32:devkitv1 --port /dev/ttyUSB2 src/esp32-main-controller/
 ```
 
+### Option B: Flash All-In-One Cloud Stick (Firebase RTDB)
+```bash
+# Configure WiFi & Firebase credentials in src/esp32-cloud-stick/config.h
+arduino-cli compile --fqbn esp32:esp32:devkitv1 src/esp32-cloud-stick/
+arduino-cli upload --fqbn esp32:esp32:devkitv1 --port /dev/ttyUSB0 src/esp32-cloud-stick/
+```
+
 5. **Monitor system**
-- Connect to "BlindStick_AP" WiFi hotspot
-- Access monitoring interface at `http://192.168.4.1/gps`
+- **Local AP Mode**: Connect to `BlindStick_AP` and open `http://192.168.4.1/gps`
+- **Cloud Guardian Mode**: Open the live dashboard at [https://stick-theta.vercel.app/](https://stick-theta.vercel.app/) to view real-time GPS tracking and emergency status.
 
 ## 📊 Technical Specifications
 

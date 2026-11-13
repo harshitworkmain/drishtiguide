@@ -10,7 +10,11 @@ import unittest
 import time
 import threading
 import json
-import serial
+try:
+    import serial
+except ImportError:
+    from unittest.mock import MagicMock
+    serial = MagicMock()
 import socket
 from datetime import datetime
 from unittest.mock import Mock, patch, MagicMock

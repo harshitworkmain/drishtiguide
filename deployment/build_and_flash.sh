@@ -7,7 +7,8 @@ set -e  # Exit on any error
 # Configuration
 TRANSMITTER_SKETCH="src/esp8266-nodes/transmitter/transmitter.ino"
 RECEIVER_SKETCH="src/esp8266-nodes/receiver/receiver.ino"
-MAIN_CONTROLLER_SKETCH="src/esp32-main-controller/main_controller.ino"
+MAIN_CONTROLLER_SKETCH="src/esp32-main-controller/esp32-main-controller.ino"
+CLOUD_STICK_SKETCH="src/esp32-cloud-stick/esp32-cloud-stick.ino"
 
 # Default ports (adjust as needed)
 TRANSMITTER_PORT="/dev/ttyUSB0"
